@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.js"></script>-->
+</head>
+<body>
+<div id="text">asdsa</div>
+<input type="button" id="show" onclick="showText()" value="show">
+<input type="button" onclick="hideText()" id="hide" value="hide">
+<input type="button" onclick="toggleText()" id="toggle" value="toggle">
+<script>
+    let text= $("#text");
+function  showText() {
+    text.show();
+}
+
+function hideText() {
+text.hide();
+}
+
+    function toggleText() {
+        text.toggle();
+    }
+</script>
+</body>
+
+</html>

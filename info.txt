@@ -1,0 +1,5 @@
+jqueryEvents
+https://www.w3schools.com/jquery/jquery_events.asp
+
+ajax
+http://anton.shevchuk.name/javascript/jquery-for-beginners-ajax/

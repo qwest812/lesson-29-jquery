@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+        .size{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="test"> Ghbdtn</div>
+<input type="button" id="red"  value="click doubleclick">
+
+<script>
+    var test =$("#test");
+    $("#red").on({
+        click: function(){
+            test.addClass("red");
+        },
+        dblclick: function(){
+            test.addClass("size");
+        },
+
+    });
+</script>
+</body>
+</html>

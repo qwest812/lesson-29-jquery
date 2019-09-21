@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--params-->
+async – асинхронность запроса, по умолчанию true
+cache – вкл/выкл кэширование данных браузером, по умолчанию true
+contentType – по умолчанию “application/x-www-form-urlencoded”
+data – передаваемые данные – строка иль объект
+dataFilter – фильтр для входных данных
+dataType – тип данных возвращаемых в callback функцию (xml, html, script, json, text, _default)
+global – тригер – отвечает за использование глобальных AJAX Event’ов, по умолчанию true
+ifModified – тригер – проверяет были ли изменения в ответе сервера, дабы не слать еще запрос, по умолчанию false
+jsonp – переустановить имя callback функции для работы с JSONP (по умолчанию генерируется на лету)
+processData – по умолчанию отправляемые данный заворачиваются в объект, и отправляются как “application/x-www-form-urlencoded”, если надо иначе – отключаем
+scriptCharset – кодировочка – актуально для JSONP и подгрузки JavaScript’ов
+timeout – время таймаут в миллисекундах
+type – GET либо POST
+url – url запрашиваемой страницы
+
+Локальные AJAX Event’ы:
+
+beforeSend – срабатывает перед отправкой запроса
+error – если произошла ошибка
+success – если ошибок не возникло
+complete – срабатывает по окончанию запроса
+
+
+
+Cписок всех event’ов:
+
+ajaxStart – Данный метод вызывается в случае когда побежал AJAX запрос, и при этом других запросов нету
+beforeSend – Срабатывает до отправки запроса, позволяет редактировать XMLHttpRequest. Локальное событие
+ajaxSend – Срабатывает до отправки запроса, аналогично beforeSend
+success – Срабатывает по возвращению ответа, когда нет ошибок ни сервера, ни вернувшихся данных. Локальное событие
+ajaxSuccess – Срабатывает по возвращению ответа, аналогично success
+error – Срабатывает в случае ошибки. Локальное событие
+ajaxError – Срабатывает в случае ошибки
+complete – Срабатывает по завершению текущего AJAX запроса (с ошибкой или без – срабатывает всегда).Локальное событие
+ajaxComplete – Глобальное событие, аналогичное complete
+ajaxStop – Данный метод вызывается в случае когда больше нету активных запросов
+
+
+<script>
+    $.ajax({
+        type: "POST",
+        url: "update-db-data",
+        data: myData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        headers: {'X-CSRF-TOKEN': "{{csrf_token()}}"},
+        success: function (data) {
+            console.log(data);
+
+        },
+        error:function (e) {
+            console.log(e);
+        }
+    }).fail(function () {
+       ....
+    });
+</script>
+</body>
+</html>

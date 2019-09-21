@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+<div style="border: 1px solid red;">jg</div>
+<button value="click"></button>
+<script>
+    $("button").click(function(){
+        console.log(11);
+        $("div").animate({
+            margin: '10px 0 0 100px',
+            opacity: '0.5',
+            height: '150px',
+            width: '150px'
+        },"slow");
+    });
+</script>
+</body>
+</html>

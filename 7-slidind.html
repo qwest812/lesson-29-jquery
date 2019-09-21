@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+<div id="text">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequuntur eligendi enim esse facilis fuga fugit ipsum iusto modi mollitia obcaecati quaerat, quasi qui ratione sint suscipit, tempora veritatis vitae?
+</div>
+<input type="button" id="fadeIn" value="slideDown">
+<input type="button" id="fadeOut" value="slideUp">
+<input type="button" id="toggle" value="toggle">
+<script>
+    let text =$("#text");
+    $("#fadeIn").click(function () {
+        text.slideDown(3000)
+    });
+
+    $("#fadeOut").click(function () {
+        text.slideUp("slow")
+    });
+
+    $("#toggle").click(function () {
+        text.slideToggle("slow")
+    });
+    </script>
+</body>
+</html>
